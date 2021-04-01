@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+	<head>
+		<title>Tugas Topik 10 Part 2 - 03082190003</title>
+	</head>
+	
+	<body>
+		<h1 id="heading1"> Contoh Event di Javascript</h1>
+		<p> Masukkan text untuk mengubah tulis pada Judul </p>
+		<p id="paragraf1">Latihan memeasukkan/menambahkan text ke dalam paragraf.</p>
+		
+		<form name="changeform">
+			<input name="newtitle" size="40">
+			<button type="button" onclick="changeTitle();">Ubah</button>
+		</form>
+		
+		<form name="changeparagraph">
+			<input name="newparagraph" size="65">
+			<button type="button" onclick="addText();">Tambah</button>
+		</form>
+		
+		<form name="compare">
+			<input name="text1" size="65">
+			<input name="text2" size="65">
+			<button type="button" onclick="compareText();">Cek Sama!</button>
+		</form>
+		
+		<script>
+			function changeTitle(){
+				if(!document.getElementById) return;
+				var newtitle = document.changeform.newtitle.value;
+				var heading1 = document.getElementById("heading1");
+				heading1.firstChild.nodeValue=newtitle;
+				document.getElementById('heading1').style.color = 'red';
+			}
+			
+			function addText(){
+				if(!document.getElementById) return;
+				var kalimat = document.changeparagraph.newparagraph.value;
+				var node = document.createTextNode(" "+kalimat);
+				document.getElementById("paragraf1").appendChild(node);
+				document.changeparagraph.kalimat.value="";
+			}
+			
+			function compareText(){
+				var kalimat1 = document.compare.text1.value;
+				var kalimat2 = document.compare.text2.value;
+				if(kalimat1 != kalimat2){
+					alert("Tidak sama");
+				}
+				else{
+					alert("Sama");
+				}
+			}
+		</script>
+	</body>
+</html>
