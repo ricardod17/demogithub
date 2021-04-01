@@ -1,5 +1,5 @@
 header{
-	background-color:#007eb8;
+	background-color:blue;
 	text-align:center;
 	height:130px;
 	padding-top:40px;
@@ -30,7 +30,7 @@ header{
 	font-size:20px;
 }
 .subtile{
-	font-size:35px;
+	font-size:40px;
 	font-weight:bold;
 	color:white;
 	margin:0 0 0 0;
