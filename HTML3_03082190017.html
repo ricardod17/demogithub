@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            Using Promp for Interaction with User
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <p>
+            Click button for start prompt
+        </p>
+
+        <button type="button" name="btnShow" onclick="callPrompt()">
+            Click Me!
+        </button>
+
+        <p id="demoPrompt"></p>
+
+        <script>
+            function callPrompt()
+            {
+                var namaUser = prompt("Please enter your name : ");
+                if(namaUser != null || namaUser != " ")
+                {
+                    document.getElementById("demoPrompt").innerHTML = "Hello " + namaUser;
+                }
+            }
+        </script>
+
+        <br>
+        <br>
+
+        <input name="inputLoop" size="40">
+
+        <button type="button" name="prosesLoop" onclick="fillLoop()">
+            Click Me!
+        </button>
+        
+        <br>
+        <br>
+
+        <p>Masukkan indeks array untuk menampilkan nama</p>
+
+        <input name="inputIndeks" size="40">
+
+        <button type="button" name="cariNama" onclick="getNamaByIndeks()">
+            Click Me!
+        </button>
+
+        <script>
+            var nama = new Array();
+            function fillLoop()
+            {
+                if(!document.getElementById) return;
+                nilaiBatas = document.getElementsByName("inputLoop")[0].value;
+                for(i=0; i<nilaiBatas; i++)
+                {
+                    alert("Nilai: "+i);
+                    nama[i] = prompt("Please enter your name : ");
+                }
+                
+                /*for(i=0; i<nilaiBatas; i++)
+                {
+                    document.write("<br>");
+                    document.write(nama[i]);
+                }*/
+            }
+
+            function getNamaByIndeks()
+            {
+                nilaiNama = document.getElementsByName("inputIndeks")[0].value;
+                alert(nama[nilaiNama]);
+            }
+        </script>
+    </body>
+</html>
